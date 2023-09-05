@@ -966,6 +966,10 @@ deeptools/plotprofile:
   - modules/nf-core/deeptools/plotprofile/**
   - tests/modules/nf-core/deeptools/plotprofile/**
 
+deeptrio:
+  - modules/nf-core/deeptrio/**
+  - tests/modules/nf-core/deeptrio/**
+
 deepvariant:
   - modules/nf-core/deepvariant/**
   - tests/modules/nf-core/deepvariant/**
@@ -3299,13 +3303,13 @@ sentieon/readwriter:
   - modules/nf-core/sentieon/readwriter/**
   - tests/modules/nf-core/sentieon/readwriter/**
 
-sentieon/wgsmetrics:
-  - modules/nf-core/sentieon/wgsmetrics/**
-  - tests/modules/nf-core/sentieon/wgsmetrics/**
-
 sentieon/varcal:
   - modules/nf-core/sentieon/varcal/**
   - tests/modules/nf-core/sentieon/varcal/**
+
+sentieon/wgsmetrics:
+  - modules/nf-core/sentieon/wgsmetrics/**
+  - tests/modules/nf-core/sentieon/wgsmetrics/**
 
 seqkit/fx2tab:
   - modules/nf-core/seqkit/fx2tab/**

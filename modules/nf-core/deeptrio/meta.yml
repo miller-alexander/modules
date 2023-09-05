@@ -1,0 +1,120 @@
+name: "deeptrio"
+description: DeepTrio is a variant calling pipeline built on top of DeepVariant for leveraging genetic inheritance.
+keywords:
+  - variant calling
+  - inheritance
+  - machine learning
+  - neural network
+tools:
+  - "deeptrio":
+      description: "DeepTrio is a variant calling pipeline built on top of DeepVariant for leveraging genetic inheritance."
+      homepage: "https://github.com/google/deepvariant"
+      documentation: "https://github.com/google/deepvariant"
+      tool_dev_url: "https://github.com/google/deepvariant"
+      doi: "10.1038/nbt.4235"
+      licence: ["BSD-3-clause"]
+      args_id: "$args"
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'proband-test', single_end:false ]`
+  - bam_proband:
+      type: file
+      description: Sorted BAM file for proband
+      pattern: "*.bam"
+  - proband_index:
+      type: file
+      description: Index of proband BAM file
+      pattern: "*.bai"
+  - meta2:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id: 'family1-test', single_end: false ]`
+  - bam_family1:
+      type: file
+      description: Sorted BAM file for first family member
+      pattern: "*.bam"
+  - family1_index:
+      type: file
+      description: Index of family1 BAM file
+      pattern: ".bai"
+  - meta3:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id: 'family2-test', single_end: false ]`
+  - bam_family2:
+      type: file
+      description: Sorted BAM file for second family member
+      pattern: "*.bam"
+  - family2_index:
+      type: file
+      description: Index of parent2 BAM file
+      pattern: "*.bai"
+  - interval:
+      type: file
+      description: Interval file for targeted regions
+      pattern: "*.bed"
+  - meta4:
+      Groovy Map containing reference information
+      e.g. [ id: 'genome' ]
+  - fasta:
+      type: file
+      description: The reference fasta file
+      pattern: "*.fasta"
+  - meta5:
+      Groovy Map containing reference information
+      e.g. [ id: 'genome' ]
+  - fai:
+      type: file
+      description: Index of reference fasta file
+      pattern: "*.fai"
+  - meta6:
+      Groovy Map containing reference information
+      e.g. [ id: 'genome' ]
+  - gzi:
+      type: file
+      description: GZI index of reference fasta file
+      pattern: "*.gzi"
+
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. `[ id:'test', single_end:false ]`
+  - vcf_proband:
+      type: file
+      description: Compressed VCF for proband
+      pattern: "*.vcf.gz"
+  - vcf_family1:
+      type: file
+      description: Compressed VCF for first family member
+      pattern: "*.vcf.gz"
+  - vcf_family2:
+      type: file
+      description: Compressed VCF for second family member
+      pattern: "*.vcf.gz"
+  - gvcf_proband:
+      type: file
+      description: Compressed GVCF file for proband
+      pattern: "*.g.vcf.gz"
+  - gvcf_family1:
+      type: file
+      description: Compressed GVCF file for first family member
+      pattern: "*.g.vcf.gz"
+  - gvcf_family2:
+      type: file
+      description: Compressed GVCF file for second family member
+      pattern: "*.g.vcf.gz"
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+
+authors:
+  - "@miller-alexander"
